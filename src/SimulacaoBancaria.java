@@ -8,7 +8,7 @@ public class SimulacaoBancaria {
         boolean continuar = true;
 
         while (continuar) {
-            System.out.println("Digite a opção que deseja escolher\n 1.Deposito.\n 2.Saque.\n 3.Consultar Saldo.\n 4.Encerrar.");
+            //System.out.println("Digite a opção que deseja escolher\n 1.Deposito.\n 2.Saque.\n 3.Consultar Saldo.\n 0.Encerrar.");
             int opcao = scan.nextInt();
 
             switch (opcao) {
@@ -17,7 +17,7 @@ public class SimulacaoBancaria {
                     Scanner ScanDeposito = new Scanner(System.in);
                     int deposito = ScanDeposito.nextInt();
                     saldo = saldo + deposito;
-                    System.out.println(saldo + " É o valor na sua conta.");
+                    System.out.println(saldo);
 
 
                     break;
@@ -28,14 +28,14 @@ public class SimulacaoBancaria {
                     int saque = ScanSaque.nextInt();
                     if (saque<=saldo){
                         saldo = saldo - saque;
-                        System.out.println(saldo + " É o novo valor na sua conta.");
+                        System.out.println(saldo);
                     } else System.out.println("Saldo insuficiente.");
                     break;
                 case 3:
-                    // TODO: Exibir o saldo atual da conta.
-                    System.out.println(saldo + " É o atual valor na sua conta.");
+                    // Exibir o saldo atual da conta.
+                    System.out.println(saldo);
                     break;
-                case 4:
+                case 0:
                     System.out.println("Programa encerrado.");
                     continuar = false;  // Atualiza a variável de controle para encerrar o loop
                     break;
